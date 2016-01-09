@@ -13,13 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20160104233951) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
@@ -36,31 +39,31 @@ ActiveRecord::Schema.define(version: 20160104233951) do
     t.datetime "updated_at",              null: false
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
-    t.integer  "items",       limit: 4
+    t.integer  "items"
   end
 
   create_table "items", force: :cascade do |t|
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.string   "name",           limit: 255
-    t.integer  "item_ID",        limit: 4
+    t.integer  "item_ID"
     t.string   "description",    limit: 255
     t.decimal  "price",                      precision: 8, scale: 2
     t.decimal  "discount_price",             precision: 8, scale: 2
-    t.integer  "stock",          limit: 4
+    t.integer  "stock"
     t.string   "in_stock",       limit: 255
     t.string   "sub_category",   limit: 255
     t.string   "image",          limit: 255
-    t.integer  "category_id",    limit: 4
+    t.integer  "category_id"
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
 
   create_table "newsletters", force: :cascade do |t|
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "article_title", limit: 255
-    t.text     "article",       limit: 65535
+    t.text     "article"
   end
 
   create_table "newsmailers", force: :cascade do |t|
