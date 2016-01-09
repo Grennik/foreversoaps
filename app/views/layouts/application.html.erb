@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forever Soaps and Incense</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  <div class="container-fluid top-nav navbar-fixed-top">
+    <!--
+    <a class="icon" href="#"><i class="fa fa-facebook fa-lg"></i></a>
+    <a class="icon" href="#"><i class="fa fa-twitter fa-lg"></i></a>
+    <a class="icon" href="#"><i class="fa fa-instagram fa-lg"></i></a>
+    <span>Phone Number</span>
+  -->
+    <span>Login</span>
+    <span>Sign-up</span>
+    <span>Shopping Cart (0)</span>
+  </div>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navigation-bar">
+    <div class="container-fluid">
+      <div class="navbar-collapse collapse" data-toggle="collapse" data-target="#nav-toggle">
+        <div class="navbar-brand">
+          <%= link_to :root do %>
+            <%= image_tag "logo.png", :class => "img-responsive logo-top" %>
+          <% end %>
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <ul class="nav navbar-nav" id="nav-toggle">
+          <% if admin_signed_in? %>
+            <li><%= link_to('Dashboard', admin_path) %></li>
+          <% end %>
+          <li><%= link_to :root, :class => "nav-icon" do %>Home<% end %></li>
+          <li><%= link_to products_path, :class => "nav-icon" do %>Products<% end %></li>
+          <li><%= link_to about_path, :class => "nav-icon" do %>About<% end %></li>
+          <li><%= link_to contact_path, :class => "nav-icon" do %>Contact<% end %></li>
+          <li>
+            <!-- this will be removed (login) -->
+          <% if admin_signed_in? %>
+            <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+          <% else %>
+            <%= link_to('Login', new_admin_session_path)  %>
+          <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+<%= yield %>
+
+
+<div class="container-liquid footer">
+  <div class="row">
+    <h3>Need Help?</h3>
+    <div class="col-sm-4 footer-links">
+      <li><%= link_to :root, :class => "nav-icon" do %>Home<% end %></li>
+      <li><%= link_to products_path, :class => "nav-icon" do %>Products<% end %></li>
+      <li><%= link_to about_path, :class => "nav-icon" do %>About<% end %></li>
+      <li><%= link_to contact_path, :class => "nav-icon" do %>Contact<% end %></li>
+    </div>
+    <div class="col-sm-4">
+      <p>Call us at 555-555-5555</p>
+      <p>Email us at test.email@gmail.com</p>
+    </div>
+    <div class="col-sm-4">
+      <a class="icon" href="#"><i class="fa fa-facebook fa-lg"></i>Facebook</i></a><br>
+      <a class="icon" href="#"><i class="fa fa-twitter fa-lg"></i>Twitter</i></a><br>
+      <a class="icon" href="#"><i class="fa fa-instagram fa-lg"></i>Instagram</a>
+    </div>
+  </div>
+  <div class="row copywright">
+    <div class="col-xs-12">
+      <p>&copy; 2015 4ever Soaps and Incenses. All rights reserved.</p>
+      <span><%= link_to terms_path, :class => "footer-bot" do %>Terms of Service<% end %></span>
+      <span><%= link_to policy_path, :class => "footer-bot" do %>Private Policy<% end %></span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

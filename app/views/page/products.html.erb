@@ -1,0 +1,48 @@
+<section id="products">
+  <div class="container-liquid">
+    <div class="col-sm-3 col-md-2 col-lg-2 product-column">
+      <div class="navbar sidebar" role+"navagation">
+        <h2 class="searchbar">Search</h2>
+        <hr class="sidebar-hr">
+        <h3 class="title">Categories</h3>
+        <form action="" class="categories-list">
+          <input type="checkbox" name="Categories" value="Soap"> Soap<br>
+          <input type="checkbox" name="Categories" value="Oils"> Oils<br>
+          <input type="checkbox" name="Categories" value="Incense"> Incense<br>
+          <input type="checkbox" name="Categories" value="Cones"> Cones
+        </form>
+        <hr class="sidebar-hr">
+        <h3 class="title">Price Range</h3>
+        <form action="" class="categories-list">
+          <input type="checkbox" name="Price" value="Less_than_one"> $0.99 or Less<br>
+          <input type="checkbox" name="Price" value="One_to_five"> $1 - $4.99<br>
+          <input type="checkbox" name="Price" value="Five_to_ten"> $5 - $9.99<br>
+          <input type="checkbox" name="Price" value="Ten_to_twentyfive"> $10 - $24.99<br>
+          <input type="checkbox" name="Price" value="More_than_twentyfive"> $25 or More<br>
+        </form>
+        <hr class="sidebar-hr">
+        <h3 class="title">Keywords</h3>
+        <hr class="sidebar-hr">
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-7 col-md-offset-0 col-sm-offset-0 image-area">
+      <%= image_tag "budhha2.jpg", :class => "img-responsive buddha" %>
+      <div class="row">
+      <div class="main-area">
+        <h1>Products</h1>
+        <% @items.each do |f| %>
+        <div class="col-lg-3 col-md-4 col-sm-6 products-area">
+          <%= image_tag f.image_url(:thumb).to_s, :class => "img-responsive" %><br>
+          <p class="name"><%= f.name%></p>
+          <p class="desc"><%= f.description %></p>
+          <span class="price">$<%= f.price %></span>
+          <span class="discount">$<%= f.discount_price %></span>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+    </div>
+  </div>
+</section>

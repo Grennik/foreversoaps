@@ -1,0 +1,35 @@
+<div class="admin-panel">
+  <div class="admin-top">
+      <span class="listing-head">Newsletter</span>
+      <span class="add-listing">
+        <%= link_to admin_newsletter_users_path do %>
+          <i class="fa fa-search"></i> View Newsletter Emails
+        <% end %>
+      </span>
+      <span class="add-listing">
+        <%= link_to admin_newsletter_new_path do %>
+          <i class="fa fa-plus"></i> Compose a Newsletter
+        <% end %>
+      </span>
+  </div>
+  <div class="listing-area container">
+  <% if @newsletters.count == 0 then %>
+    <p class="no-items">There is nothing here to display</p>
+    <% else %>
+    <% @newsletters.each do |f| %>
+    <div class="row">
+      <h2 class="newsletter-title"><%= f.article_title %><br></h2>
+      <p class="newsletter-body"><%= truncate(f.article, length:1024) %></p>
+      <div class="newsletter-links">
+        <%= link_to "View", admin_show_newsletter_path(f) %>
+        <%= link_to "Publish", root_path %>
+        <%= link_to "Edit", admin_edit_newsletter_path(f) %>
+        <%= link_to "Delete", admin_destroy_newsletter_path(f), method: :delete, data: {confirm: 'Are you sure?'} %>
+        <hr>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+
+  </div>
+</div>

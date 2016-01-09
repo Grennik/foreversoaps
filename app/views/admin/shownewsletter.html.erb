@@ -1,0 +1,18 @@
+<div class="admin-panel">
+  <div class="admin-top">
+      <span class="listing-head">Newsletter Article</span>
+      <span class="add-listing">
+        <%= link_to admin_newsletter_path do %>
+          <i class="fa fa-arrow-left"></i> Back to Newsletter Posts
+        <% end %>
+      </span>
+    </div>
+    <div class="listing-area container">
+      <h2 class="newsletter-title"><%= @newsletter.article_title %></h2>
+      <p class="newsletter-body"><%= @newsletter.article %></p>
+      <div class="newsletter-links">
+        <%= link_to "Edit", admin_edit_newsletter_path(@newsletter) %>
+        <%= link_to "Delete", admin_destroy_newsletter_path(@newsletter), method: :delete, data: {confirm: 'Are you sure?'} %>
+      </div>
+    </div>
+  </div>

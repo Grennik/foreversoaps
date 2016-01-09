@@ -1,0 +1,35 @@
+<div class="admin-panel">
+  <div class="admin-top">
+    <span class="listing-head">
+      Items in <%= @category.name %>
+    </span>
+    <span class="add-listing">
+      <%= link_to new_admin_category_item_path(@category) do %>
+        <i class="fa fa-plus"></i> Add New Items
+      <% end %>
+  </div>
+  <% if @category.items.count == 0 then %>
+    <p class="no-items">There is nothing here to display</p>
+  <% end %>
+  <div class='container listing-table'>
+  <% @category.items.each do |f| %>
+      <div class="col-lg-6 col-md-6 col-sm-12 item-window">
+        <%= image_tag f.image_url(:thumb).to_s %><br>
+        <%= link_to admin_category_item_path(f.category_id, f) do %>
+          <%= f.name %><br>
+        <% end %>
+        <%= f.description %><br>
+        <span>Price: $</span><%= f.price %>
+        <span>Discount Price: $</span><%= f.discount_price %>
+        <span>Stock: </span><%= f.stock %><br>
+          <span>Sub Category: </span><%= f.sub_category %><br>
+        <span>Category Number: </span><%= f.category_id %><br>
+        <%= link_to "Edit", edit_admin_category_item_path(f.category_id, f) %>
+        <%= link_to "Delete",  admin_category_item_path(f.category_id, f), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+      </div>
+  <% end %>
+</div>
+<div class="back">
+    <%= link_to "Back", admin_categories_path(@category) %>
+</div>
+</div>

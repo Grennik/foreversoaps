@@ -1,0 +1,27 @@
+<div class="admin-panel">
+  <div class="admin-top">
+      <span class="listing-head">Newsletter Emails</span>
+      <span class="add-listing">
+        <%= link_to admin_newsletter_path do %>
+          <i class="fa fa-arrow-left"></i> Back to Newsletter Posts
+        <% end %>
+      </span>
+    </div>
+  <table class='listing-table table'>
+    <thead class="bold">
+      <td>ID</td>
+      <td>Email</td>
+    </thead>
+    <tbody>
+
+      <% @newsmailers.each do |c| %>
+      <tr>
+        <td><%= c.id %></td>
+        <td><%= c.email %></td>
+        <td><%= link_to "Delete", admin_destroy_newsmailer_path(c), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>

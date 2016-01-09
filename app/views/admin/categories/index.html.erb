@@ -1,0 +1,31 @@
+<div class="admin-panel">
+  <div class="admin-top">
+    <span class="listing-head">Categories Listing</span>
+    <span class="add-listing">
+      <%= link_to new_admin_category_path do %>
+        <i class="fa fa-plus"></i> Add New Categories
+      <% end %>
+    </span>
+  </div>
+  <table class='listing-table table'>
+    <thead class="bold">
+      <td>Name</td>
+      <td>Description</td>
+      <td>Item(s)</td>
+    </thead>
+    <tbody>
+
+      <% @categories.each do |c| %>
+      <tr>
+        <td> <%= link_to c.name, admin_category_path(c) %>  </td>
+        <td> <%= c.description %> </td>
+        <td> <%= c.items.count %></td>
+        <td> <%= link_to 'Edit', edit_admin_category_path(c) %> </td>
+        <td> <%= link_to 'Delete', admin_category_path(c), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+
+</div>

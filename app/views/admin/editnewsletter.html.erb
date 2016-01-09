@@ -1,0 +1,30 @@
+<div class="admin-panel">
+  <div class="admin-top">
+      <span class="listing-head">Newsletter Article</span>
+      <span class="add-listing">
+        <%= link_to admin_newsletter_path do %>
+          <i class="fa fa-arrow-left"></i> Back to Newsletter Posts
+        <% end %>
+      </span>
+    </div>
+    <div class="listing-area container">
+      <%= form_for :newsletter, url: admin_update_newsletter_path(@newsletter), method: :patch do |f| %>
+      <% if @newsletter.errors.any? %>
+        <div id="error-explanation">
+          <h2>
+            <%= pluralize(@newsletter.errors.count, "error") %> prohibited this article from being saved:
+          </h2>
+          <ul>
+            <% @newsletter.errors.full_messages.each do |msg| %>
+            <li> <%= msg %> </li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        <h3 class="newshead">Title</h3><br>
+          <%= f.text_field :article_title, :class => "newstitle" %><br>
+          <%= f.text_area :article, :class => "newsarea" %><br>
+          <%= f.submit 'Update', :class => "newssubmit-btn" %>
+        <% end %>
+    </div>
+  </div>

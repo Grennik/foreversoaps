@@ -1,0 +1,184 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Questrial);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+
+
+body {
+  background-image: url(white-grapes2.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.logo {
+  text-align: center;
+  color: white;
+  padding-top: 5px;
+}
+
+.logo-top {
+  height: 80px;
+  margin-top: -40px;
+}
+
+.nav {
+  float: right;
+  margin: auto auto;
+  a {
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.5em;
+  }
+}
+
+.nav.navbar-nav li a:hover{
+  color: #16984a;
+}
+
+.navbar-brand {
+  font-size: 2em;
+  a{
+    text-decoration: none;
+  }
+  a:hover {
+    background: none;
+  }
+}
+.navbar-default.opaque {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.top-nav.opaque {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-default {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  border: none;
+  background-color: #f1f1f1;
+  margin-top: 20px;
+  -webkit-transition: background 2s ease-in;
+  -moz-transition: background 2s ease-in;
+  transition: background 2s ease-in;
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.9em;
+
+}
+
+.footer {
+ background-color:  #16984a;
+ text-align: center;
+ margin-top: 0px;
+ color: white;
+ padding-right: 0px;
+ z-index: 600;
+ .icon {
+   color:white;
+   font-family: 'Questrial', sans-serif;
+ }
+ .icon:hover {
+   background: none;
+   text-decoration: none;
+   color: #e1e1e1;
+ }
+ .icon:visited {
+   color: white;
+   text-decoration: none;
+ }
+ .footer-links{
+   list-style: none;
+   line-height: 150%;
+   margin-bottom: 15px;
+   a {
+     color: white;
+     margin-bottom: 5px;
+   }
+   a:hover{
+     background: none;
+     text-decoration: none;
+     color: #e1e1e1;
+   }
+   a:visited {
+     color: white;
+     text-decoration: none;
+   }
+ }
+   .footer-bot{
+     color: white;
+     margin-bottom: 5px;
+   }
+   .footer-bot:hover{
+     background: none;
+     text-decoration: none;
+     color: #e1e1e1;
+   }
+   .footer-bot:visited {
+     color: white;
+     text-decoration: none;
+   }
+}
+.fa{
+  margin-right: 10px;
+}
+.top-nav {
+  background-color: #f1f1f1;
+  text-align: right;
+  -webkit-transition: background 2s ease-in;
+  -moz-transition: background 2s ease-in;
+  transition: background 2s ease-in;
+  font-family: 'Questrial', sans-serif;
+  span {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.copywright {
+  padding-top: 25px;
+  padding-bottom: 5px;
+  background-color: #11783a;
+  margin: auto auto;
+  span {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+.layout {
+
+  margin-top: 100px;
+  padding-top: 200px;
+  padding-bottom: 250px;
+  text-align: center;
+  .signin-box {
+      box-shadow: 0 0 25px black;
+      background-color: white;
+      padding-bottom: 20px;
+  }
+}

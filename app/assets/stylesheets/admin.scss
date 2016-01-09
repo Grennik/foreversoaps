@@ -1,0 +1,183 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dashboard {
+  margin-top: 105px;
+}
+
+.pill-table {
+  background-color: white;
+  list-style: none;
+  text-align: left;
+  padding-left: 0px;
+  margin-top: 10px;
+
+  li {
+    font-size: 1.5em;
+    padding: 20px;
+    font-family: 'Questrial', sans-serif;
+  }
+}
+
+.admin-panel {
+  background-color: white;
+  margin-left: -10px;
+  margin-top: 10px;
+
+}
+
+.admin-top {
+  font-family: 'Questrial', sans-serif;
+  background-color: #16984a;
+  color: white;
+  padding-left: 10px;
+
+  .listing-head {
+    padding: 10px 10px;
+    font-size: 3em;
+    margin-top: 0px;
+  }
+  .add-listing {
+    float: right;
+    padding-top: 20px;
+    padding-right: 10px;
+    a {
+      color: white;
+    }
+    a:hover {
+      color: black;
+      background: none;
+      text-decoration: none;
+    }
+  }
+}
+
+.logo-top {
+  height: 80px;
+  margin-top: -40px;
+}
+
+.listing-table {
+  td {
+    font-size: 1.25em;
+    font-family: 'Questrial', sans-serif;
+  }
+  padding-bottom: 10px;
+  a {
+    color: #16984a;
+  }
+  a:visited {
+    color: #16984a;
+  }
+  a:hover {
+    color: black;
+    background: none;
+    text-decoration: none;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.categories_listing_main {
+  text-align: center;
+}
+
+.listing-border {
+  border: 1px solid #16984a;
+  margin-bottom: 10px;
+
+  a {
+    color: #16984a;
+    font-size: 1.35em;
+  }
+  a:visited {
+    color: #16984a;
+  }
+  a:hover {
+    color: black;
+    background: none;
+    text-decoration: none;
+  }
+}
+
+.no-items {
+  padding: 10px 10px;
+  text-align: center;
+}
+.back {
+    text-align: center;
+  a{
+    padding: 20px 20px;
+    color: #16984a;
+    font-size: 1.5em;
+    font-family:  'Questrial', sans-serif;
+  }
+  a:hover{
+    color: black;
+    background: none;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #16984a;
+  }
+}
+.item-window {
+  text-align: center;
+}
+
+.newshead {
+  text-align: center;
+  margin: 0px;
+  padding: 10px 0px;
+  font-size: 2em;
+  font-family:  'Questrial', sans-serif;
+}
+.listing-area{
+  text-align: center;
+}
+.newstitle {
+  width: 97%;
+}
+.newsarea {
+  width: 97%;
+  height: 650px;
+  margin-top: 2px;
+  margin-bottom: 15px;
+}
+.newssubmit-btn {
+
+  margin: 0px auto;
+  display: inline-block;
+  padding: 10px 30px;
+  border: none;
+  background-color: #16984a;
+  color: white;
+  font-size: 1.5em;
+  font-family:  'Questrial', sans-serif;
+  margin-bottom: 20px;
+}
+.newsletter-title {
+  font-size: 2em;
+}
+.newsletter-body {
+  text-align: left;
+  white-space: pre-wrap;
+}
+.newsletter-links a{
+  color: #16984a;
+  padding: 20px 5px;
+  font-size: 1.25em;
+  font-family:  'Questrial', sans-serif;
+}
+.newsletter-links a:hover {
+  text-decoration: none;
+  color: black;
+  background: none;
+}
+.newsletter-links a:visited {
+  text-decoration: none;
+  color: #16984a;
+}
