@@ -10,19 +10,3 @@ admin.email = 'joey.ciervo@gmail.com'
 admin.password = 'password123'
 admin.password_confirmation = 'password123'
 admin.save!
-
-category = Category.new
-category.name = 'Soap'
-category.cat_ID = '1'
-
-category = Category.new
-category.name = 'Oils'
-category.cat_ID = '2'
-
-category = Category.new
-category.name = 'Insense'
-category.cat_ID = '3'
-
-category = Category.new
-category.name = 'Cones'
-category.cat_ID = '4'
