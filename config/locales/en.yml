@@ -20,4 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        newsmailer:
+          attributes:
+            email:
+              blank: " cannot be empty"
+              taken: " is taken"
+              invalid: " is invalid"
+    attributes:
+      newsmailer:
+        email: "E-Mail address"

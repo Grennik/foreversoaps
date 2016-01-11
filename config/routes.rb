@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users, :controllers => { users: 'users' }
   devise_for :admins
   root 'page#index'
 
@@ -19,8 +20,9 @@ Rails.application.routes.draw do
   get 'admin/newsletter/:id/edit', to: 'admin#editnewsletter', as: "admin_edit_newsletter"
   patch 'admin/newsletter/:id', to: 'admin#updatenewsletter', as: "admin_update_newsletter"
   delete 'admin/newsletter/:id', to: 'admin#destroynewsletter', as: "admin_destroy_newsletter"
+  get 'admin/users', to: 'admin#users', as: "admin_users"
 
-  post 'admin/newsletter/users', to: 'admin#createnewsmailer'
+  post '/', to: 'page#createnewsmailer'
   delete 'admin/newsletter/users/:id', to: 'admin#destroynewsmailer', as: "admin_destroy_newsmailer"
 
   namespace :admin do

@@ -1,7 +1,19 @@
+<div class="error-area">
+<% if @newsmailer.errors.any? %>
+  <div id="error-msg">
+    <h2>An error prohibited this email from being saved:</h2>
+    <ul>
+      <% @newsmailer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <%= link_to "  Click here to view", :anchor => "newsletter" %>
+  </div>
+<% end %>
+</div>
 <section id="carousel-section">
   <div class="container">
     <div class="row">
-
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -44,7 +56,7 @@
     <h2>Welcome to Forever Soaps and Incenses</h2>
     <div class="container">
       <div class="col-sm-offset-2 col-sm-8">
-        <p>Located in the heart of the Bronx in New York, we create homemade, natural soaps, body oils, incenses and cones. With products made from organic materials and no harmful chemicals, we offer you safe and enjoyable products for to enjoy. </p>
+        <p>Located in the heart of the Bronx in New York, we create homemade, natural soaps, body oils, incenses and cones. With products made from all natural materials and no harmful chemicals, we offer you unique and high quality products for to enjoy. </p>
       </div>
     </div>
   </div>
@@ -71,15 +83,17 @@
       </button>
     <% end %>
   </div>
+<section id="newsletter">
   <div class="container-liquid main-area-2">
     <p>Sign up for our Newsletter here!</p>
     <p>
-      <%= form_for :newsmailer, url: admin_newsletter_users_path, method: :post do |f| %>
+      <%= form_for :newsmailer, url: root_path, method: :post do |f| %>
         <%= f.text_field :email, :placeholder => "YourEmail@domain.com",:class => "newsletter-signup-form" %>
     </p>
     <%= f.submit 'SUBMIT', :class => "newssubmit-btn" %>
     <% end %>
   </div>
+</section>
   <div class="container social-display">
     <div class="col-lg-4 col-md-4 col-sm-12 social-area">
       <a class="icon1" href="#"><i class="fa fa-facebook fa-lg"></i>Like us on Facebook</a>

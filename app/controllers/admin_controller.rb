@@ -17,17 +17,13 @@ class AdminController < ApplicationController
     @categories = Category.all
   end
 
-  def createnewsmailer
-    @newsmailer = Newsmailer.new(newsmailer_params)
-
-    if @newsmailer.save
-      NewsletterMailer.welcome_email(@newsmailer).deliver_now
-      redirect_to root_path
-    end
-  end
-
   def newnewsletter
     @newsletter = Newsletter.new
+    @categories = Category.all
+  end
+
+  def users
+    @users = User.all
     @categories = Category.all
   end
 
@@ -80,8 +76,5 @@ class AdminController < ApplicationController
       params.require(:newsletter).permit(:article_title, :article)
   end
 
-  private
-  def newsmailer_params
-    params.require(:newsmailer).permit(:email)
-  end
+
 end
