@@ -1,3 +1,39 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#user {
+
+  .main-user {
+    margin-top: 100px;
+    background-color: white;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    h1{
+      background-color: #16984a;
+      color: white;
+      font-family:  'Questrial', sans-serif;
+      margin: 0 0;
+      padding: 20px 15px;
+    }
+    .user-pills{
+      margin-top: 25px;
+      p{
+        font-size: 1.35em;
+        padding: 10px;
+        font-family:  'Questrial', sans-serif;
+      }
+    }
+    .settings-area{
+      border: 1px solid #f1f1f1;
+      padding-top: 20px;
+      font-family:  'Questrial', sans-serif;
+      font-size: 1.125em;
+      .user-info{
+        font-weight: bold;
+      }
+    }
+  }
+}

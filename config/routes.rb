@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   get '/terms-of-service', to: 'page#terms', as: "terms"
   get '/private-policy', to: 'page#policy', as: "policy"
 
+  get '/user', to: 'users#index', as: 'user'
+  namespace :users do
+    resources :shippings
+  
+  end
+
   get 'admin/newsletter', to: 'admin#newsletter', as: "admin_newsletter"
   get 'admin/newsletter/users', to: 'admin#newsletterusers', as: "admin_newsletter_users"
   get 'admin/newsletter/new', to: 'admin#newnewsletter', as: "admin_newsletter_new"

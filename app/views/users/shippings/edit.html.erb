@@ -1,0 +1,46 @@
+<div class="error-area">
+<% if @shipping.errors.any? %>
+  <div id="error-msg">
+    <h2>An error prohibited this address from being saved:</h2>
+    <ul>
+      <% @shipping.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
+<section id="user">
+  <div class="container main-user">
+      <h1> Account Settings </h1>
+    <div class="user-pills col-sm-2 col-md-3 col-lg-3">
+      <p><%= link_to 'Main Settings', user_path %></p>
+      <p>Current Orders</p>
+      <p>Previous Transations</p>
+    </div>
+    <div class="settings-area col-sm-10 col-md-9 col-lg-9">
+      <h3>Add New Shipping Address</h3>
+      <%= form_for @shipping, url: users_shippings_path, method: :post do |f| %>
+
+        <p> First and Last Name </p>
+        <%= f.text_field :name %><br>
+
+        <p> Street Address </p>
+        <%= f.text_field :street_address %><br>
+
+        <p> Apartment (if any) </p>
+        <%= f.text_field :apartment %><br>
+
+        <p> State </p>
+        <%= f.collection_select(:state, State.order(:name), :id, :name, {:include_blank=> "Select a State"}, {:class=> "user-dropdown"}) %><br>
+
+        <p> Zipcode </p>
+        <%= f.text_field :zipcode %><br>
+
+        <%= f.submit %>
+
+      <% end %>
+      <%= link_to "Back", user_path %>
+    </div>
+  </div>
+</section>

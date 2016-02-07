@@ -1,0 +1,30 @@
+<section id="user">
+  <div class="container main-user">
+      <h1> Account Settings </h1>
+    <div class="user-pills col-sm-2 col-md-3 col-lg-3">
+      <p><%= link_to 'Main Settings', user_path %></p>
+      <p>Current Orders</p>
+      <p>Previous Transations</p>
+    </div>
+    <div class="settings-area col-sm-10 col-md-9 col-lg-9">
+      <span>Email Address: </span><span class="user-info"> <%= @user.email %></span><br>
+      <span>Password (Hidden)</span><br>
+      <span>Edit</span><br>
+
+      <h3>Shipping Address</h3>
+      <% @shippings.each do |t| %>
+
+          <p> Name: <%= t.name %> </p>
+          <p> Street Address: <%= t.street_address %> </p>
+          <p> Apartment: <%= t.apartment %> </p>
+          <p> State: <%= t.state %> </p>
+          <p> Zipcode: <%= t.zipcode %> </p>
+          <%= link_to "Edit", edit_users_shipping_path(t) %>
+          <%= link_to 'Delete', users_shipping_path(t), method: :delete, data: {confirm: 'Are you sure?'} %>
+      <% end %>
+      <hr>
+      <%= link_to "Add New Address", new_users_shipping_path %>
+
+    </div>
+  </div>
+</section>

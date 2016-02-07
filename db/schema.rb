@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111195851) do
+ActiveRecord::Schema.define(version: 20160207034938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,35 @@ ActiveRecord::Schema.define(version: 20160111195851) do
     t.string   "email",      limit: 255
   end
 
+  create_table "shippings", force: :cascade do |t|
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "name"
+    t.string   "street_address"
+    t.string   "apartment"
+    t.integer  "zipcode"
+    t.integer  "user_id"
+    t.integer  "state"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "name"
+    t.decimal  "shipping_price"
+    t.integer  "shipping_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.datetime "time"
+    t.string   "pending"
+    t.integer  "items"
+    t.integer  "user_id"
+    t.decimal  "total_price"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -85,6 +114,7 @@ ActiveRecord::Schema.define(version: 20160111195851) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "shippings"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
