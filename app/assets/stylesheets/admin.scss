@@ -138,6 +138,11 @@
 .listing-area{
   text-align: center;
 }
+
+.listing-area2{
+  text-align: center;
+  margin-top: 25px;
+}
 .newstitle {
   width: 97%;
 }
@@ -180,4 +185,31 @@
 .newsletter-links a:visited {
   text-decoration: none;
   color: #16984a;
+}
+
+.settings-overhead{
+  background-color: white;
+}
+.settings-btn {
+  font-family:  'Questrial', sans-serif;
+  color: #16984a;
+  text-decoration: none;
+  font-size: 2em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.settings-btn:hover{
+  color: black !important;
+  text-decoration: none;
+  background: none;
+}
+
+.settings-btn:visited{
+  color: #16984a;
+}
+
+.settings-layout {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

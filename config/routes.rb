@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/user', to: 'users#index', as: 'user'
   namespace :users do
     resources :shippings
-  
+
   end
 
   get 'admin/newsletter', to: 'admin#newsletter', as: "admin_newsletter"
@@ -28,10 +28,14 @@ Rails.application.routes.draw do
   delete 'admin/newsletter/:id', to: 'admin#destroynewsletter', as: "admin_destroy_newsletter"
   get 'admin/users', to: 'admin#users', as: "admin_users"
 
+  get 'admin/settings', to: 'admin#settings', as: "admin_settings"
+
+
   post '/', to: 'page#createnewsmailer'
   delete 'admin/newsletter/users/:id', to: 'admin#destroynewsmailer', as: "admin_destroy_newsmailer"
 
   namespace :admin do
+    resources :states
     resources :categories do
       resources :items
     end

@@ -1,0 +1,30 @@
+<div class="admin-panel">
+  <div class="admin-top">
+      <span class="listing-head">Modify States</span>
+      <span class="add-listing">
+        <%= link_to new_admin_state_path do %>
+          <i class="fa fa-plus"></i> Add State
+        <% end %>
+      </span>
+    </div>
+  <table class='listing-table table'>
+    <thead class="bold">
+      <td>Number</td>
+      <td>State</td>
+    </thead>
+    <tbody>
+
+      <% count = 1 %>
+      <% @states.each do |c| %>
+      <tr>
+        <td> <%= count %> </td>
+        <td><%= c.name %></td>
+        <td><%= link_to "Delete", admin_state_path(c), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+        <% count += 1 %>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+  <%= link_to "Back to Settings", admin_settings_path %>
+</div>

@@ -6,6 +6,10 @@ class AdminController < ApplicationController
     @categories = Category.all
   end
 
+  def settings
+    @categories = Category.all
+  end
+
   def newsletter
     @newsletters = Newsletter.all
     @categories = Category.all
