@@ -30,15 +30,22 @@
       <div class="row">
       <div class="main-area">
         <h1>Products</h1>
-        <% @items.each do |f| %>
         <div class="col-lg-3 col-md-4 col-sm-6 products-area">
-          <%= image_tag f.image_url(:thumb).to_s, :class => "img-responsive" %><br>
-          <p class="name"><%= f.name%></p>
-          <p class="desc"><%= f.description %></p>
-          <span class="price">$<%= f.price %></span>
-          <span class="discount">$<%= f.discount_price %></span>
+          <h2 class="name">Soaps</h2>
+          <%= link_to (image_tag "soap1.jpg", :class => "img-responsive splash"), show_products_path(1) %>
         </div>
-        <% end %>
+        <div class="col-lg-3 col-md-4 col-sm-6 products-area">
+          <h2 class="name">Oils</h2>
+          <%= link_to (image_tag "oils1.jpg",  :class => "img-responsive splash"), show_products_path(2) %>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 products-area">
+          <h2 class="name">Incense</h2>
+          <%= link_to (image_tag "incense1.jpg", :class => "img-responsive splash"), show_products_path(3) %>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 products-area">
+          <h2 class="name">Cones</h2>
+          <%= link_to (image_tag "cones1.jpg", :class => "img-responsive splash"), show_products_path(4) %>
+        </div>
       </div>
     </div>
     </div>

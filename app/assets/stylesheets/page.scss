@@ -249,26 +249,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', end
       padding: 20px;
       color: white;
     }
+
     .products-area {
       margin-top: 20px;
       margin-bottom: 20px;
       text-align: center;
       font-family: 'Questrial', sans-serif;
       .name {
-        font-size: 1.75em;
-        color: #16984a;
+        font-size: 2.25em;
+        color: black;
         font-family: 'Kaushan Script', cursive;
       }
+      .description {
+        font-size: 1.25em;
+
+      }
       .price {
+        font-size: 1.25em;
         color: black;
         text-decoration: line-through;
       }
       .discount {
         color: #16984a;
-        font-size: 1.125em;
+        font-size: 1.5em;
       }
     }
   }
+
 }
 #about {
   .main-area {

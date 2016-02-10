@@ -6,6 +6,10 @@ class PageController < ApplicationController
 
   def products
     @categories = Category.all
+  end
+
+  def showproducts
+    @category = Category.find(params[:id])
     @items = Item.all
   end
 

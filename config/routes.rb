@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'page#index'
 
   get '/products', to: 'page#products', as: 'products'
-
+  get '/products/:id', to: 'page#showproducts', as: 'show_products'
   get '/about', to: 'page#about', as: 'about'
   get '/contact', to: 'page#contact', as: 'contact'
   get '/admin', to: 'admin#dash', as: 'admin'

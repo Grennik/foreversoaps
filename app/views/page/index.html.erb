@@ -63,23 +63,23 @@
   <div class="container categories-display">
     <div class="col-lg-6 col-md-6 col-sm-6">
       <h3>Soaps</h3>
-      <%= image_tag "soap1.jpg", :class => "img-responsive splash" %>
+      <%= link_to (image_tag "soap1.jpg", :class => "img-responsive splash"), show_products_path(1) %>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6">
       <h3>Oils</h3>
-      <%= image_tag "oils1.jpg", :class => "img-responsive splash" %>
+      <%= link_to (image_tag "oils1.jpg", :class => "img-responsive splash"), show_products_path(2) %>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6">
       <h3>Incenses</h3>
-      <%= image_tag "incense1.jpg", :class => "img-responsive splash" %>
+      <%= link_to (image_tag "incense1.jpg", :class => "img-responsive splash"), show_products_path(3) %>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6">
       <h3>Cones</h3>
-      <%= image_tag "cones1.jpg", :class => "img-responsive splash" %>
+      <%= link_to (image_tag "cones1.jpg", :class => "img-responsive splash"), show_products_path(4) %>
     </div>
     <%= link_to products_path do %>
       <button class="button button-default">
-        <span>View all products</span>
+        <span>Go to products</span>
       </button>
     <% end %>
   </div>

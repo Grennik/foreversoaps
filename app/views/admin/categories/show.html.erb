@@ -13,8 +13,8 @@
   <% end %>
   <div class='container listing-table'>
   <% @category.items.each do |f| %>
-      <div class="col-lg-6 col-md-6 col-sm-12 item-window">
-        <%= image_tag f.image_url(:thumb).to_s %><br>
+      <div class="col-lg-4 col-md-4 col-sm-6 item-window">
+        <%= image_tag f.image_url(:small).to_s %><br>
         <%= link_to admin_category_item_path(f.category_id, f) do %>
           <%= f.name %><br>
         <% end %>
