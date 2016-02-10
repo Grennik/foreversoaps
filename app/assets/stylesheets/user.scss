@@ -6,7 +6,8 @@
 #user {
 
   .main-user {
-    margin-top: 100px;
+    margin-top: 175px;
+    margin-bottom: 76px;
     background-color: white;
     text-align: center;
     padding-left: 0px;
@@ -31,9 +32,29 @@
       padding-top: 20px;
       font-family:  'Questrial', sans-serif;
       font-size: 1.125em;
+      padding-bottom: 25px;
+      p{
+        font-family:  'Questrial', sans-serif;
+        font-size: 1em;
+      }
       .user-info{
         font-weight: bold;
       }
     }
+  }
+  .user-btn {
+    color: #white;
+    text-decoration: none;
+    font-family:  'Questrial', sans-serif;
+    margin-bottom: 15px;
+  }
+  .user-btn:hover{
+    color: black !important;
+    text-decoration: none;
+    background: none;
+  }
+  .user-btn:visited{
+    color: #white;
+    text-decoration: none;
   }
 }

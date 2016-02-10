@@ -19,11 +19,13 @@
           <p> Apartment: <%= t.apartment %> </p>
           <p> State: <%= t.state %> </p>
           <p> Zipcode: <%= t.zipcode %> </p>
-          <%= link_to "Edit", edit_users_shipping_path(t) %>
-          <%= link_to 'Delete', users_shipping_path(t), method: :delete, data: {confirm: 'Are you sure?'} %>
+          <br>
+          <%= link_to "Edit", edit_users_shipping_path(t), :class => "user-btn" %>
+          <%= link_to 'Delete', users_shipping_path(t), :class => "user-btn", method: :delete, data: {confirm: 'Are you sure?'} %>
+
       <% end %>
       <hr>
-      <%= link_to "Add New Address", new_users_shipping_path %>
+      <%= link_to "Add New Address", new_users_shipping_path, :class => "user-btn" %>
 
     </div>
   </div>
