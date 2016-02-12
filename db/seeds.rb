@@ -11,14 +11,8 @@
 # admin.password_confirmation = 'password123'
 # admin.save!
 
-state = State.new
-state.name = "New York"
-state.save!
-
-state = State.new
-state.name = "New Jersey"
-state.save!
-
-state = State.new
-state.name = "Texas"
-state.save!
+admin = Admin.new
+admin.email = 'joey.ciervo@gmail.com'
+admin.password = 'Jackass1990'
+admin.password_confirmation = 'Jackass1990'
+admin.save!
