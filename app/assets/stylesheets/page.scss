@@ -121,6 +121,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', end
     text-align: center;
     padding-bottom: 20px;
     box-shadow: 5px 0px 15px -7px black, -5px 0px 15px -7px black;
+
+    a:hover {
+      background: none;
+    }
     h3 {
       font-size: 2.5em;
       font-family: 'Kaushan Script', cursive;

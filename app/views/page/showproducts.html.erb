@@ -21,13 +21,16 @@
       <%= image_tag "budhha2.jpg", :class => "img-responsive buddha" %>
       <div class="row">
         <div class="main-area">
+          <h1><%= @category.name %></h1>
           <% @category.items.each do |f| %>
             <div class="col-sm-6 col-md-4 products-area">
               <span class="name"><%= f.name %></span><br>
               <%= image_tag f.image_url(:small).to_s %><br>
               <span class="description"><%= f.description %></span><br>
-              <span class="price"><%= f.price %></span><br>
-              <span class="discount"><%= f.discount_price %></span><br>
+                <% if f.discount_price != 0 then %>
+                <span class="price">$<%= f.price %></span><br>
+                <% end %>
+              <span class="discount">$<%= (f.price - f.discount_price) %></span><br>
             </div>
           <% end %>
         </div>
