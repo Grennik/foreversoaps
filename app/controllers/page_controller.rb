@@ -1,16 +1,28 @@
 class PageController < ApplicationController
 
+
   def index
     @newsmailer = Newsmailer.new
+    @orderitem = current_order.orderitems.new
   end
 
   def products
     @categories = Category.all
+    @orderitem = current_order.orderitems.new
   end
 
   def showproducts
     @category = Category.find(params[:id])
     @items = Item.all
+    @orderitem = current_order.orderitems.new
+  end
+
+  def showitems
+    @category = Category.all
+    @item = Item.find(params[:id])
+    @user = current_user
+    @orderitem = current_order.orderitems.new
+    @orderitem.item_id = params[:item_id]
   end
 
   def terms
@@ -34,6 +46,9 @@ class PageController < ApplicationController
       render "index"
     end
   end
+
+
+
 
   private
   def newsmailer_params

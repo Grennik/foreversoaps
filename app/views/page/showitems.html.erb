@@ -1,0 +1,32 @@
+<section id="products">
+  <div class="container item-area">
+      <div class="col-sm-8">
+        <%= image_tag @item.image_url(:thumb).to_s %>
+      </div>
+      <div class="col-sm-4">
+        <h1 class="title"><%= @item.name %></h1>
+        <hr>
+        <p> <%= @item.description %></p>
+
+        <% if user_signed_in? %>
+          <%= form_for @orderitem, url: users_orderitems_path do |f| %>
+              <p>$<%= (@item.price - @item.discount_price) %></p>
+              <p><%= f.number_field :quantity, value: 1, min: 1 %></p>
+              <%= f.hidden_field :item_id, value: :item_id %>
+              <%= f.hidden_field :price, value: (@item.price - @item.discount_price) %>
+              <%= f.hidden_field :name, value: @item.name %>
+              <%= f.hidden_field :image, value: @item.image %>
+              <%= f.hidden_field :description, value: @item.description %>
+              <%= f.submit "Add to Cart" %>
+            <% end %>
+
+        <% else %>
+        <p> $<%= (@item.price - @item.discount_price) %> </p>
+        <p>You must login to add this to your cart</p>
+        <% end %>
+
+      </div>
+
+      <%= link_to "Back", show_products_path(@item.category_id) %>
+    </div>
+</section>

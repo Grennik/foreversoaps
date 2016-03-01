@@ -24,11 +24,11 @@
   <% if user_signed_in? %>
     <span class="top-link"><%= link_to('Account', user_path) %></span>
     <span class="top-link"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></span>
+    <span class="top-link"><%= link_to "Cart (#{current_order.orderitems.size})", users_cart_path %></span>
   <% else %>
     <span class="top-link"><%= link_to('Login', new_user_session_path) %></span>
     <span class="top-link"><%= link_to('Sign-Up',  new_user_registration_path) %></span>
   <% end %>
-    <span>Shopping Cart (0)</span>
   </div>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navigation-bar">
     <div class="container-fluid">
@@ -96,5 +96,6 @@
     </div>
   </div>
 </div>
+
 </body>
 </html>

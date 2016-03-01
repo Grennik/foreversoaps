@@ -25,12 +25,15 @@
           <% @category.items.each do |f| %>
             <div class="col-sm-6 col-md-4 products-area">
               <span class="name"><%= f.name %></span><br>
-              <%= image_tag f.image_url(:small).to_s %><br>
+              <%= link_to show_items_path(f.category_id, f) do %>
+                <%= image_tag f.image_url(:small).to_s %><br>
+              <% end %>
               <span class="description"><%= f.description %></span><br>
                 <% if f.discount_price != 0 then %>
                 <span class="price">$<%= f.price %></span><br>
                 <% end %>
               <span class="discount">$<%= (f.price - f.discount_price) %></span><br>
+            <%= link_to "View", show_items_path(f.category_id, f) %>
             </div>
           <% end %>
         </div>

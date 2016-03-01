@@ -11,10 +11,14 @@ Rails.application.routes.draw do
   get '/admin', to: 'admin#dash', as: 'admin'
   get '/terms-of-service', to: 'page#terms', as: "terms"
   get '/private-policy', to: 'page#policy', as: "policy"
+  get '/products/:category_id/items/:id', to: 'page#showitems', as: 'show_items'
 
   get '/user', to: 'users#index', as: 'user'
   namespace :users do
+    get '/cart', to: 'transactions#index', as: 'cart'
+    resources :orderitems, only: [:index, :create, :update, :destroy]
     resources :shippings
+
 
   end
 

@@ -20,6 +20,7 @@
 @import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
 
 
+
 body {
   background-image: url(image_path('white-grapes2.jpg'));
   background-size: 100%;
@@ -215,8 +216,8 @@ body {
   }
 }
 .error-area {
-  margin-top: 200px;
-  margin-bottom: -100px;
+  margin-top: 100px;
+  margin-bottom: 0px;
     #error-msg {
       background-color: red;
       text-align: center;

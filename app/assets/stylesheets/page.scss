@@ -279,7 +279,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', end
       }
     }
   }
-
+  .item-area {
+    background-color: white;
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    .title {
+      padding-top: 15px;
+      margin: 0 0;
+    }
+    p{
+      margin-bottom: 0px;
+      font-size: 1.125em;
+      padding-bottom: 10px;
+    }
+  }
 }
 #about {
   .main-area {

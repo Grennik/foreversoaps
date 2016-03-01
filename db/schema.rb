@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207034938) do
+ActiveRecord::Schema.define(version: 20160301232119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,28 @@ ActiveRecord::Schema.define(version: 20160207034938) do
     t.string   "email",      limit: 255
   end
 
+  create_table "orderitems", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "transaction_id"
+    t.decimal  "price"
+    t.integer  "quantity"
+    t.decimal  "total_price"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "image"
+    t.string   "description"
+    t.string   "name"
+  end
+
+  add_index "orderitems", ["item_id"], name: "index_orderitems_on_item_id", using: :btree
+  add_index "orderitems", ["transaction_id"], name: "index_orderitems_on_transaction_id", using: :btree
+
+  create_table "orderstatuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shippings", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -92,14 +114,17 @@ ActiveRecord::Schema.define(version: 20160207034938) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.datetime "time"
-    t.string   "pending"
-    t.integer  "items"
+    t.decimal  "subtotal"
+    t.decimal  "tax"
+    t.decimal  "shipping"
+    t.decimal  "total"
+    t.integer  "orderstatus_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "user_id"
-    t.decimal  "total_price"
   end
+
+  add_index "transactions", ["orderstatus_id"], name: "index_transactions_on_orderstatus_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -115,9 +140,13 @@ ActiveRecord::Schema.define(version: 20160207034938) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "shippings"
+    t.integer  "transactions"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "orderitems", "items"
+  add_foreign_key "orderitems", "transactions"
+  add_foreign_key "transactions", "orderstatuses"
 end
