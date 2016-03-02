@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-  
+
 
   def current_order
     if !session[:transaction_id].nil?
@@ -26,4 +26,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  
 end

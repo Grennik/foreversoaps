@@ -75,6 +75,12 @@ class AdminController < ApplicationController
     redirect_to admin_newsletter_path
   end
 
+  def new_user
+    @user = User.find(params[:id])
+    Newusermailer.new_user_email(@user).deliver
+    redirect_to admin_users_path
+  end
+
   private
   def newsletter_params
       params.require(:newsletter).permit(:article_title, :article)

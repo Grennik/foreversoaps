@@ -15,7 +15,7 @@
         <tr>
           <td><%= c.id %></td>
           <td><%= c.email %></td>
-          <td><%= link_to "test email", :controller => "newusermailer", :action => "new_user_email", :user => c %>
+          <td><%= link_to "test email", :controller => "admin", :action => "new_user", :id => c %>
         </tr>
         <% end %>
 

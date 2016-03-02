@@ -45,7 +45,7 @@ Rails.application.routes.draw do
     end
   end
 
-    get :new_user_email, to: 'newusermailer#new_user_email', as: :new_user_email
+    get :new_user, to: 'admin#new_user', as: :new_user
 
 
 
