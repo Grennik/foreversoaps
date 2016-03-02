@@ -18,9 +18,9 @@ Rails.application.routes.draw do
     get '/cart', to: 'transactions#index', as: 'cart'
     resources :orderitems, only: [:create, :update, :destroy]
     resources :shippings
-
-
   end
+
+
 
   get 'admin/newsletter', to: 'admin#newsletter', as: "admin_newsletter"
   get 'admin/newsletter/users', to: 'admin#newsletterusers', as: "admin_newsletter_users"
@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     end
   end
 
+    get :new_user_email, to: 'newusermailer#new_user_email', as: :new_user_email
 
 
 

@@ -28,6 +28,12 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
+  # Mail Dev area
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_options = {from: 'no-reply@foreversoaps.com'}
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
