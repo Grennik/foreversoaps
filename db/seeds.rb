@@ -5,15 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# admin = Admin.new
-# admin.email = 'joey.ciervo@gmail.com'
-# admin.password = 'password123'
-# admin.password_confirmation = 'password123'
-# admin.save!
+ admin = Admin.new
+ admin.email = 'joey.ciervo@gmail.com'
+ admin.password = 'password123'
+ admin.password_confirmation = 'password123'
+ admin.save!
 
 
-Orderstatus.delete_all
-Orderstatus.create! id: 1, name: "In Progress"
-Orderstatus.create! id: 2, name: "Placed"
-Orderstatus.create! id: 3, name: "Shipped"
-Orderstatus.create! id: 4, name: "Cancelled"
+# Orderstatus.delete_all
+# Orderstatus.create! id: 1, name: "In Progress"
+# Orderstatus.create! id: 2, name: "Placed"
+# Orderstatus.create! id: 3, name: "Shipped"
+# Orderstatus.create! id: 4, name: "Cancelled"
