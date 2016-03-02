@@ -2,7 +2,8 @@ class Users::OrderitemsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    redirect_to users_cart_path
+    @user = current_user
+    @orderitems = current_order.orderitems
   end
 
   def create

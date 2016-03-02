@@ -15,8 +15,9 @@ Rails.application.routes.draw do
 
   get '/user', to: 'users#index', as: 'user'
   namespace :users do
-    get '/cart', to: 'transactions#index', as: 'cart'
-    resources :orderitems, only: [:index, :create, :update, :destroy]
+  
+    resources :orderitems, only: [:create, :update, :destroy]
+    get '/cart', to: 'orderitems#index', as: 'cart'
     resources :shippings
 
 
