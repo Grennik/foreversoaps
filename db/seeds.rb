@@ -12,7 +12,7 @@
 # admin.save!
 
 
-Orderstatus.delete_all
+
 Orderstatus.create! id: 1, name: "In Progress"
 Orderstatus.create! id: 2, name: "Placed"
 Orderstatus.create! id: 3, name: "Shipped"
