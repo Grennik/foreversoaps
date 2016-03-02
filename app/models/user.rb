@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :shippings,  dependent: :destroy
   has_many :transactions, dependent: :destroy
+
+  def after_create(user)
+    @user = user
+    Newusermailer.new_user_email(@user.email).deliver_now
+  end
 end

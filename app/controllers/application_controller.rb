@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  
+
   def current_order
     if !session[:transaction_id].nil?
       Transaction.find(session[:transaction_id])
