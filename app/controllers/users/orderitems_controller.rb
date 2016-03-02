@@ -1,10 +1,6 @@
 class Users::OrderitemsController < ApplicationController
   before_filter :authenticate_user!
 
-  def index
-    @user = current_user
-    @orderitems = current_order.orderitems
-  end
 
   def create
     @transaction = current_order
